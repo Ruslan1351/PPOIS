@@ -176,14 +176,11 @@ vector <int> long_int::get_number()
 
 void long_int::print() const
 {
-    if (_sign == '-') {
+    if (_sign == '-') 
         cout << '-';
-        for (int i = 0; i < _number.size(); i++)
-            cout << _number[i];
-    }
-    else
-        for (int i = 0; i < _number.size(); i++)
-            cout << _number[i];
+    for (int i = 0; i < _number.size(); i++)
+        cout << _number[i];
+
 }
 
 long_int long_int::sum_long_int_and_long_int(long_int number1, long_int number2) const
@@ -300,21 +297,21 @@ long_int long_int::dividing_long_int_and_int(long_int long_int_number, int int_n
 char long_int::compare_long_int_and_long_int(long_int number1, long_int number2) const
 {
     if (number1._sign == '+' and number2._sign == '-')
-        return '>';//
+        return '>';
     if (number1._sign == '-' and number2._sign == '+')
-        return '<';//
+        return '<';
     if (number1._number == number2._number)
-        return '=';//
+        return '=';
     if (number1._sign == '+' and number2._sign == '+')
         if (vector1_bigger(number1._number, number2._number) == 1)
-            return '>';//
+            return '>';
         else
-            return '<';//
+            return '<';
     if (number1._sign == '-' and number2._sign == '-')
         if (vector1_bigger(number1._number, number2._number) == 1)
-            return '<';//
+            return '<';
         else
-            return '>';//
+            return '>';
 }
 char long_int::compare_long_int_and_int(long_int long_int_number, int int_number) const
 {
